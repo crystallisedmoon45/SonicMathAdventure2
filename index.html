@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Math Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="sonic"></div>
+        <div id="question-area">
+            <p id="question"></p>
+            <input type="number" id="answer">
+            <div id="operation-selection">
+                <button onclick="setOperation('add')">+</button>
+                <button onclick="setOperation('subtract')">-</button>
+                <button onclick="setOperation('multiply')">*</button>
+                <button onclick="setOperation('divide')">÷</button>
+            </div>
+            <button onclick="checkAnswer()">Check</button>
+        </div>
+        <div id="results" style="display: none;">
+            <p id="score"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
