@@ -80,3 +80,4 @@ function resetQuestionTimer() {
 }
 
 startGame();
+//we//
