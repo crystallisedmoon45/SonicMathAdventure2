@@ -26,7 +26,7 @@ function generateQuestion() {
             break;
         case 'multiply':
             correctAnswer = num1 * num2;
-            document.getElementById('question').textContent = `${num1} X ${num2} = ?`; // Use 'X' for multiplication
+            document.getElementById('question').textContent = `${num1} x ${num2} = ?`; // Changed from X to x
             break;
         case 'divide':
             correctAnswer = Math.round(num1 / num2);
