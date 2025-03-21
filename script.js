@@ -4,6 +4,8 @@ let score = 0;
 let sonicPosition = 0;
 let gameTimer;
 let questionTimer;
+let sonicSpeed = 5; // Initial speed
+let speedReduction = 1; // Amount to reduce speed by
 
 function setOperation(op) {
     operation = op;
@@ -41,6 +43,7 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         score++;
         moveSonic();
+        resetSpeed(); // Reset speed after correct answer
     }
     document.getElementById('answer').value = '';
     generateQuestion();
@@ -48,13 +51,14 @@ function checkAnswer() {
 }
 
 function moveSonic() {
-    sonicPosition += 50;
+    sonicPosition += sonicSpeed * 10; // Move Sonic based on speed
     document.getElementById('sonic').style.left = sonicPosition + 'px';
 }
 
 function startGame() {
     score = 0;
     sonicPosition = 0;
+    sonicSpeed = 5; // Reset speed
     document.getElementById('sonic').style.left = '0px';
     document.getElementById('results').style.display = 'none';
     document.getElementById('question-area').style.display = 'block';
@@ -71,6 +75,7 @@ function endGame() {
 function startQuestionTimer() {
     questionTimer = setTimeout(() => {
         generateQuestion();
+        reduceSpeed(); // Reduce speed on timeout
     }, 5000); // 5 seconds
 }
 
@@ -79,5 +84,12 @@ function resetQuestionTimer() {
     startQuestionTimer();
 }
 
+function reduceSpeed() {
+    sonicSpeed = Math.max(1, sonicSpeed - speedReduction); // Ensure speed doesn't go below 1
+}
+
+function resetSpeed() {
+    sonicSpeed = 5; // Reset speed to initial value
+}
+
 startGame();
-//we//
