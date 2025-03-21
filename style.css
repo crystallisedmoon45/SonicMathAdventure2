@@ -22,7 +22,7 @@ body {
     left: 0;
     width: 100px;
     height: 100px;
-    background-image: url('sonic.jpg'); /* Replace with your Sonic image */
+    background-image: url('sonic.gif'); /* Replace with your Sonic image */
     background-size: contain;
     background-repeat: no-repeat;
     transition: left 0.5s linear;
