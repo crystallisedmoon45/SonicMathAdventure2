@@ -1,4 +1,4 @@
-llet operation = '';
+let operation = '';
 let num1, num2, correctAnswer;
 let score = 0;
 let sonicPosition = 0;
@@ -91,4 +91,5 @@ function updateBackdrop() {
     }
 }
 
+startGame();
 startGame();
