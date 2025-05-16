@@ -92,4 +92,3 @@ function updateBackdrop() {
 }
 
 startGame();
-startGame();
