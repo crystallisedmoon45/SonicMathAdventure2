@@ -1,10 +1,12 @@
 body {
     display: flex;
+    flex-direction: column; /* Changed to column to stack elements vertically */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to allow content to push down */
     margin: 0;
     font-family: sans-serif;
+    padding: 20px 0; /* Add some padding top/bottom */
 }
 
 .game-container {
@@ -17,6 +19,7 @@ body {
     background-image: url('backdrop1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 20px; /* Add space below the game box */
 }
 
 #sonic {
@@ -52,8 +55,24 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.text-box-container {
+    width: 80%; /* Match game container width */
+    max-width: 600px; /* Match game container max-width */
+    margin-top: 20px; /* Space above the text box */
+}
+
+#game-info-box {
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    resize: vertical; /* Allow vertical resizing by user */
+}
+
 @media (max-width: 480px) {
-    .game-container {
+    .game-container, .text-box-container {
         width: 95%;
     }
 }
